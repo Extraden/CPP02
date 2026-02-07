@@ -35,12 +35,6 @@ Fixed&	Fixed::operator=(const Fixed& other)
   return (*this);
 }
 
-Fixed&	Fixed::operator*(const Fixed& other)
-{
-  (void) other;
-  return (*this);
-}
-
 Fixed::~Fixed()
 {
   std::cout << "Destructor called\n";
@@ -74,3 +68,24 @@ std::ostream& operator<<(std::ostream& output, Fixed const& num)
   output << num.toFloat();
   return (output);
 }
+
+Fixed	Fixed::operator+(const Fixed& other) const
+{
+  return(this->toFloat() + other.toFloat());
+}
+
+Fixed	Fixed::operator-(const Fixed& other) const
+{
+  return(this->toFloat() - other.toFloat());
+}
+
+Fixed	Fixed::operator*(const Fixed& other) const
+{
+  return(this->toFloat() * other.toFloat());
+}
+
+Fixed	Fixed::operator/(const Fixed& other) const
+{
+  return(this->toFloat() / other.toFloat());
+}
+
