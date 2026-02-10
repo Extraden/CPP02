@@ -29,10 +29,15 @@ class Fixed
     Fixed	  operator--(int);
 
     int   getRawBits() const;
-    void  setRawBits(int const row);
+    void  setRawBits(int const raw);
     float toFloat() const;
     int   toInt() const;
-;
+
+    static Fixed&  min(Fixed& num1, Fixed& num2);
+    static const Fixed&  min(const Fixed& num1, const Fixed& num2);
+    static Fixed&  max(Fixed& num1, Fixed& num2);
+    static const Fixed&  max(const Fixed& num1, const Fixed& num2);
+
   private:
     int _value;
     static const int  _bits = 8;
